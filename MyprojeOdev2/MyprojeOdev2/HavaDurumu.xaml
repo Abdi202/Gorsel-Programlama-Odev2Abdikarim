@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyprojeOdev2.HavaDurumu"
+             Title="HavaDurumu">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="add.png" Order="Primary" Clicked="AddClicked"/>
+        <ToolbarItem IconImageSource="refresh.png" Order="Primary" Clicked="UpdateClicked"/>
+    </ContentPage.ToolbarItems>
+
+    <RefreshView RefreshColor="Orange" x:Name="refreshView" Refreshing="refreshView_Refreshing">
+        <CollectionView x:Name="listCity">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid  Margin="5" RowDefinitions="Auto,*" RowSpacing="10" ColumnDefinitions="*,Auto">
+                        <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" FontSize="Title" VerticalOptions="Center"/>
+                        <ImageButton Grid.Row="0" Grid.Column="1" Source="remove.png" WidthRequest="20"
+                                     CommandParameter="{Binding Name}" Clicked="Remove_Clicked"/>
+                        <WebView Grid.Row="1" Grid.ColumnSpan="2" Source="{Binding Source}"
+                                 BackgroundColor="White" HeightRequest="100"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </RefreshView>
+</ContentPage>

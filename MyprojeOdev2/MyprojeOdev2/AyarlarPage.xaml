@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyprojeOdev2.AyarlarPage"
+             Title="Ayarlar">
+     <ContentPage.Resources>
+
+        <Color x:Key="DarkLabelBackColor">Black</Color>
+        <Color x:Key="LightLabelBackColor">White</Color>
+
+        <Color x:Key="DarkLabelTextColor">white</Color>
+        <Color x:Key="LightLabelTextColor">Black</Color>
+
+        <Style TargetType="Label">
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightLabelBackColor}, Dark={StaticResource DarkLabelBackColor}}"/>
+            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightLabelTextColor}, Dark={StaticResource DarkLabelTextColor}}"/>
+        </Style>
+
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Start">
+            <Grid  RowDefinitions="Auto" ColumnDefinitions="*">
+
+                <Label Text="Koyu Renk" Grid.Row="0" Grid.Column="0"/>
+
+                <Switch   Grid.Row="0" Grid.Column="1" HorizontalOptions="End"   Toggled="Switch_Toggled"></Switch>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

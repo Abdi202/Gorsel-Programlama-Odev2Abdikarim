@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyprojeOdev2.YapilacaklarPage"
+             Title="YapilacaklarPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="kadd.png" Order="Primary"  Clicked="YapilacEkleClicked"/>
+        <ToolbarItem IconImageSource="refresh.png" Order="Primary" Clicked="YapilacakYukleClicked"/>
+    </ContentPage.ToolbarItems>
+
+    <!--<RefreshView IsRefreshing="True" RefreshColor="Orange" Refreshing="KisileriYukleClicked" x:Name="reff">-->
+
+    <CollectionView x:Name="listYapilacklar" SelectionMode="Single">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Border BackgroundColor="Transparent">
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                          ColumnDefinitions="Auto,*,Auto,Auto" >
+                        <CheckBox Grid.Row="0" Grid.Column="0"   IsChecked="True" HorizontalOptions="EndAndExpand"/>
+
+                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding gorev}" FontSize="Title" TextColor="OrangeRed"/>
+                        <Label Grid.Row="2" Grid.Column="1" Text="{Binding Detay}"/>
+                        <Label Grid.Row="3" Grid.Column="1" Text="{Binding Tarih}"/>
+                        <Label Grid.Row="4" Grid.Column="1" Text="{Binding Saat}"/>
+
+                        <ImageButton Grid.Row="1" Grid.Column="2" 
+                                     CommandParameter="{Binding ID}"
+                                     Source="edit.png"   Clicked="YapilacakDuzenleClicked" HorizontalOptions="End" VerticalOptions="End"/>
+                        <ImageButton Grid.Row="1" Grid.Column="3"
+                                     CommandParameter="{Binding ID}"
+                                     Source="remove.png" Clicked="YapilacakSilClicked"  HorizontalOptions="End"/>
+
+                    </Grid>
+                </Border>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>

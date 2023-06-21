@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyprojeOdev2.DovizKurlari"
+             Title="Güncel Kurlar">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="refresh.png" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <Style TargetType="Label" x:Key="Baslik">
+            <Setter Property="TextColor" Value="Orange"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property ="BackgroundColor" Value="Gray"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <!--<Label Grid.Row="0" Text="Güncel Döviz Kurları" TextColor="Orange" FontSize="Large" Margin="20"/>-->
+
+        <ListView Grid.Row="1" Margin="20,2" x:Name="dovizliste" SelectionMode="None" BackgroundColor="#ffffffff" >
+            <ListView.Header>
+                <Grid ColumnDefinitions="*,*,*,*,.5*" RowDefinitions="Auto" >
+                    <Label Grid.Column="0" Text="Adı"   Style="{StaticResource Baslik}"/>
+                    <Label Grid.Column="1" Text="Alış"  Style="{StaticResource Baslik}"/>
+                    <Label Grid.Column="2" Text="Satış" Style="{StaticResource Baslik}"/>
+                    <Label Grid.Column="3" Text="Fark"  Style="{StaticResource Baslik}"/>
+                    <Label Grid.Column="4" Text="Yön"   Style="{StaticResource Baslik}"/>
+                </Grid>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid ColumnDefinitions="*,*,*,*,.5*">
+                            <Label Grid.Column="0" Text="{Binding DName}" TextColor="OrangeRed"/>
+                            <Label Grid.Column="1" Text="{Binding FAlis}"/>
+                            <Label Grid.Column="2" Text="{Binding FSatis}"/>
+                            <Label Grid.Column="3" Text="{Binding Fark}"/>
+                            <Image Grid.Column="4" Source="{Binding Yon}" HorizontalOptions="Start" HeightRequest="15"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!--<Button Grid.Row="2" Text="Güncelle" Margin="20"
+                Clicked="Button_Clicked" ImageSource="update.png"/>-->
+    </Grid>
+</ContentPage>

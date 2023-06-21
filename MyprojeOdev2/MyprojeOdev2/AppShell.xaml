@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MyprojeOdev2.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MyprojeOdev2"
+    Shell.FlyoutBehavior="Flyout">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+    <ShellContent
+         Icon="money.png"
+        Title="Kurlar"
+        ContentTemplate="{DataTemplate local:DovizKurlari}"
+        Route="DovizKurlari" />
+
+    <ShellContent
+          Icon="news.png"
+        Title="Haberler"
+        ContentTemplate="{DataTemplate local:Haberler}"
+        Route="Haberler" />
+
+    <ShellContent
+          Icon="weather.png"
+        Title="HavaDurum"
+        ContentTemplate="{DataTemplate local:HavaDurumu}"
+        Route="HavaDurum" />
+
+    <ShellContent
+       Icon="write.png"
+        Title="Yapilacaklar"
+        ContentTemplate="{DataTemplate local:YapilacaklarPage}"
+        Route="Yapilacaklar" />
+
+    <ShellContent
+       Icon="gear.png"
+     
+        Title="Ayarlar"
+        ContentTemplate="{DataTemplate local:AyarlarPage}"
+        Route="Ayarlar" />
+
+</Shell>

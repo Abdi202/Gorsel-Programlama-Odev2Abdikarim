@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyprojeOdev2.HaberlerDetails"
+             Title="HaberlerDetails">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="add.png" Order="Primary"/>
+        <ToolbarItem IconImageSource="update.png" Order="Primary"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <WebView x:Name="webView"/>
+    </ContentPage.Content>
+
+
+
+
+
+
+</ContentPage>
